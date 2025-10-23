@@ -249,15 +249,15 @@
   - [x] 5.30 Apply Tailwind CSS styling following the color palette from PRD (indigo primary, gray backgrounds)
   - [ ] 5.31 Make UI fully responsive (mobile, tablet, desktop breakpoints)
 
-- [ ] 6.0 Docker Configuration & Deployment Setup
-  - [ ] 6.1 Create backend `Dockerfile` (Node 20 Alpine, install deps, build TypeScript, expose port 3000)
-  - [ ] 6.2 Create frontend `Dockerfile` (Node 20 Alpine, install deps, build with Vite, serve with nginx or node)
-  - [ ] 6.3 Create `docker-compose.yml` with services: postgres, mongo, backend, frontend
-  - [ ] 6.4 Configure postgres service with health checks and volume for data persistence
-  - [ ] 6.5 Configure mongo service with health checks and volume for data persistence
-  - [ ] 6.6 Configure backend service to depend on postgres and mongo, pass DB_TYPE env variable
-  - [ ] 6.7 Configure frontend service to depend on backend, pass VITE_API_URL env variable
-  - [ ] 6.8 Add volume mounts for database initialization scripts (migrations)
+- [x] 6.0 Docker Configuration & Deployment Setup
+  - [x] 6.1 Create backend `Dockerfile` (Node 20 Alpine, install deps, build TypeScript, expose port 3000)
+  - [x] 6.2 Create frontend `Dockerfile` (Node 20 Alpine, install deps, build with Vite, serve with nginx or node)
+  - [x] 6.3 Create `docker-compose.yml` with services: postgres, mongo, backend, frontend
+  - [x] 6.4 Configure postgres service with health checks and volume for data persistence
+  - [x] 6.5 Configure mongo service with health checks and volume for data persistence
+  - [x] 6.6 Configure backend service to depend on postgres and mongo, pass DB_TYPE env variable
+  - [x] 6.7 Configure frontend service to depend on backend, pass VITE_API_URL env variable
+  - [x] 6.8 Add volume mounts for database initialization scripts (migrations)
   - [ ] 6.9 Test `docker-compose up` with DB_TYPE=postgres
   - [ ] 6.10 Test switching to DB_TYPE=mongo and verify application works
 
