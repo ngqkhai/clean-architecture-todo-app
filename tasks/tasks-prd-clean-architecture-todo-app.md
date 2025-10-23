@@ -194,91 +194,91 @@
     - `execute(itemId, userId)` validates ownership, deletes item
 
 - [x] 4.0 Implement Infrastructure Layer (Database Implementations & Web Framework)
-  - [ ] 4.1 Create `database/postgres/schema.sql` with:
+  - [x] 4.1 Create `database/postgres/schema.sql` with:
     - UUID extension setup
     - `users`, `todo_lists`, `todo_items` tables with proper foreign keys and cascade deletes
     - Indexes on `user_id` and `list_id` columns
     - CHECK constraint for date validation on `todo_items`
-  - [ ] 4.2 Create `database/postgres/seed.sql` with sample data:
+  - [x] 4.2 Create `database/postgres/seed.sql` with sample data:
     - 2-3 sample users with bcrypt hashed passwords
     - 5-7 sample lists across users
     - 10-15 sample items with various dates and completion statuses
-  - [ ] 4.3 Create `database/mongo/schema.md` documenting the collections and field structure
-  - [ ] 4.4 Create `database/mongo/seed.json` with equivalent sample data (matching Postgres seed)
-  - [ ] 4.5 Implement `backend/src/infrastructure/database/postgres/connection.js`:
+  - [x] 4.3 Create `database/mongo/schema.md` documenting the collections and field structure
+  - [x] 4.4 Create `database/mongo/seed.json` with equivalent sample data (matching Postgres seed)
+  - [x] 4.5 Implement `backend/src/infrastructure/database/postgres/connection.js`:
     - Create and export PostgreSQL connection pool using `pg` library
     - Use environment variables for connection (POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD)
-  - [ ] 4.6 Implement `backend/src/infrastructure/database/postgres/PostgresUserRepository.js`:
+  - [x] 4.6 Implement `backend/src/infrastructure/database/postgres/PostgresUserRepository.js`:
     - Implements `IUserRepository` interface
     - `createUser()` uses SQL INSERT with UUID generation
     - `findUserByEmail()` uses SQL SELECT with email filter
     - `findUserById()` uses SQL SELECT with id filter
-  - [ ] 4.7 Implement `backend/src/infrastructure/database/postgres/PostgresToDoListRepository.js`:
+  - [x] 4.7 Implement `backend/src/infrastructure/database/postgres/PostgresToDoListRepository.js`:
     - Implements `IToDoListRepository` interface
     - All CRUD methods using SQL queries
     - `deleteList()` relies on CASCADE DELETE for items
-  - [ ] 4.8 Implement `backend/src/infrastructure/database/postgres/PostgresToDoItemRepository.js`:
+  - [x] 4.8 Implement `backend/src/infrastructure/database/postgres/PostgresToDoItemRepository.js`:
     - Implements `IToDoItemRepository` interface
     - All CRUD methods using SQL queries
     - Properly handles optional `startDate` and `deadlineDate` fields
-  - [ ] 4.9 Implement `backend/src/infrastructure/database/mongo/connection.js`:
+  - [x] 4.9 Implement `backend/src/infrastructure/database/mongo/connection.js`:
     - Create and export MongoDB client connection using `mongodb` driver
     - Use MONGO_URI environment variable
-  - [ ] 4.10 Implement `backend/src/infrastructure/database/mongo/MongoUserRepository.js`:
+  - [x] 4.10 Implement `backend/src/infrastructure/database/mongo/MongoUserRepository.js`:
     - Implements `IUserRepository` interface
     - Uses `users` collection
     - Converts ObjectId to string for consistency with Postgres UUID
-  - [ ] 4.11 Implement `backend/src/infrastructure/database/mongo/MongoToDoListRepository.js`:
+  - [x] 4.11 Implement `backend/src/infrastructure/database/mongo/MongoToDoListRepository.js`:
     - Implements `IToDoListRepository` interface
     - Uses `todoLists` collection
     - `deleteList()` manually deletes associated items (no cascade in Mongo)
-  - [ ] 4.12 Implement `backend/src/infrastructure/database/mongo/MongoToDoItemRepository.js`:
+  - [x] 4.12 Implement `backend/src/infrastructure/database/mongo/MongoToDoItemRepository.js`:
     - Implements `IToDoItemRepository` interface
     - Uses `todoItems` collection
-  - [ ] 4.13 Implement `backend/src/infrastructure/factories/RepositoryFactory.js`:
+  - [x] 4.13 Implement `backend/src/infrastructure/factories/RepositoryFactory.js`:
     - Read `DB_TYPE` from environment (`postgres` or `mongo`)
     - Export function `createRepositories()` that returns object with `userRepository`, `listRepository`, `itemRepository`
     - Instantiates correct implementations based on `DB_TYPE`
     - Throws error if DB_TYPE is unsupported
-  - [ ] 4.14 Create `backend/src/config/config.js`:
+  - [x] 4.14 Create `backend/src/config/config.js`:
     - Load and export all environment variables (PORT, DB_TYPE, JWT_SECRET, database connection strings)
     - Provide defaults where appropriate
 
 - [x] 5.0 Implement Adapters Layer (Controllers & Middleware)
-  - [ ] 5.1 Implement `backend/src/adapters/presenters/ResponseFormatter.js`:
+  - [x] 5.1 Implement `backend/src/adapters/presenters/ResponseFormatter.js`:
     - Utility functions for consistent API responses: `success(data)`, `error(message, statusCode)`
-  - [ ] 5.2 Implement `backend/src/adapters/middlewares/authMiddleware.js`:
+  - [x] 5.2 Implement `backend/src/adapters/middlewares/authMiddleware.js`:
     - Middleware function that extracts JWT from `Authorization: Bearer <token>` header
     - Verifies JWT using `JWT_SECRET`
     - Attaches decoded user data to `req.user` (should contain `userId`)
     - Returns 401 if token missing or invalid
-  - [ ] 5.3 Implement `backend/src/adapters/controllers/AuthController.js`:
+  - [x] 5.3 Implement `backend/src/adapters/controllers/AuthController.js`:
     - Constructor accepts `registerUserUseCase`, `loginUserUseCase`
     - `register(req, res)` endpoint: calls RegisterUser use case, returns success or error
     - `login(req, res)` endpoint: calls LoginUser use case, signs JWT with user id, returns token and user info
-  - [ ] 5.4 Implement `backend/src/adapters/controllers/ToDoListController.js`:
+  - [x] 5.4 Implement `backend/src/adapters/controllers/ToDoListController.js`:
     - Constructor accepts all list-related use cases
     - `getAllLists(req, res)` - uses `req.user.userId` to get user's lists
     - `createList(req, res)` - creates list for authenticated user
     - `updateList(req, res)` - updates list with ownership validation
     - `deleteList(req, res)` - deletes list with ownership validation
-  - [ ] 5.5 Implement `backend/src/adapters/controllers/ToDoItemController.js`:
+  - [x] 5.5 Implement `backend/src/adapters/controllers/ToDoItemController.js`:
     - Constructor accepts all item-related use cases
     - `getItemsForList(req, res)` - fetches items for a specific list
     - `createItem(req, res)` - creates item in a list
     - `updateItem(req, res)` - updates item with ownership validation
     - `toggleCompletion(req, res)` - toggles item completion status
     - `deleteItem(req, res)` - deletes item with ownership validation
-  - [ ] 5.6 Implement `backend/src/infrastructure/web/routes/authRoutes.js`:
+  - [x] 5.6 Implement `backend/src/infrastructure/web/routes/authRoutes.js`:
     - Define routes: `POST /api/auth/register`, `POST /api/auth/login`
     - Wire routes to AuthController methods
-  - [ ] 5.7 Implement `backend/src/infrastructure/web/routes/listRoutes.js`:
+  - [x] 5.7 Implement `backend/src/infrastructure/web/routes/listRoutes.js`:
     - Define protected routes (apply authMiddleware): `GET /api/lists`, `POST /api/lists`, `PUT /api/lists/:id`, `DELETE /api/lists/:id`
     - Wire routes to ToDoListController methods
-  - [ ] 5.8 Implement `backend/src/infrastructure/web/routes/itemRoutes.js`:
+  - [x] 5.8 Implement `backend/src/infrastructure/web/routes/itemRoutes.js`:
     - Define protected routes: `GET /api/lists/:listId/items`, `POST /api/lists/:listId/items`, `PUT /api/items/:id`, `PATCH /api/items/:id/toggle`, `DELETE /api/items/:id`
     - Wire routes to ToDoItemController methods
-  - [ ] 5.9 Implement `backend/src/infrastructure/web/server.js`:
+  - [x] 5.9 Implement `backend/src/infrastructure/web/server.js`:
     - Create Express app
     - Apply middleware: `express.json()`, `cors()`
     - Use RepositoryFactory to create repositories
@@ -287,7 +287,7 @@
     - Mount routes: `/api/auth`, `/api/lists`, `/api/items`
     - Add global error handling middleware
     - Start server on port from config
-  - [ ] 5.10 Create backend entry point `backend/src/index.js` that imports and runs server
+  - [x] 5.10 Create backend entry point `backend/src/index.js` that imports and runs server
 
 - [ ] 6.0 Build Frontend Application (React + TypeScript)
   - [ ] 6.1 Configure Tailwind CSS with the custom color palette:
