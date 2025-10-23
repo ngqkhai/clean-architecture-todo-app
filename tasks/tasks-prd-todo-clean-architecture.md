@@ -146,7 +146,7 @@
 
 ## Tasks
 
-- [ ] 1.0 Project Setup & Initial Structure
+- [x] 1.0 Project Setup & Initial Structure
   - [x] 1.1 Create monorepo directory structure with `/backend` and `/frontend` folders
   - [x] 1.2 Initialize backend Node.js/TypeScript project (`npm init`, install TypeScript, ts-node, etc.)
   - [x] 1.3 Create backend folder structure following Clean Architecture layers (domain, application, infrastructure)
@@ -159,14 +159,14 @@
   - [x] 1.10 Install backend core dependencies (express, dotenv, cors, jsonwebtoken, bcrypt, pg, mongoose, zod)
 
 - [ ] 2.0 Implement Domain Layer (Core Business Logic)
-  - [ ] 2.1 Create `User` entity with properties: id, email, name, passwordHash, createdAt, updatedAt
-  - [ ] 2.2 Create `Email` value object with email format validation
-  - [ ] 2.3 Create `Password` value object with minimum length validation (min 8 characters)
-  - [ ] 2.4 Create `ToDoList` entity with properties: id, userId, title, createdAt, updatedAt
-  - [ ] 2.5 Create `ToDoItem` entity with properties: id, listId, title, description, isCompleted, startDate, deadlineDate, createdAt, updatedAt
-  - [ ] 2.6 Create `DateRange` value object that validates deadlineDate >= startDate
-  - [ ] 2.7 Add validation methods to entities (e.g., validateTitle length for ToDoList and ToDoItem)
-  - [ ] 2.8 Ensure domain layer has ZERO external dependencies (pure TypeScript)
+  - [x] 2.1 Create `User` entity with properties: id, email, name, passwordHash, createdAt, updatedAt
+  - [x] 2.2 Create `Email` value object with email format validation
+  - [x] 2.3 Create `Password` value object with minimum length validation (min 8 characters)
+  - [x] 2.4 Create `ToDoList` entity with properties: id, userId, title, createdAt, updatedAt
+  - [x] 2.5 Create `ToDoItem` entity with properties: id, listId, title, description, isCompleted, startDate, deadlineDate, createdAt, updatedAt
+  - [x] 2.6 Create `DateRange` value object that validates deadlineDate >= startDate
+  - [x] 2.7 Add validation methods to entities (e.g., validateTitle length for ToDoList and ToDoItem)
+  - [x] 2.8 Ensure domain layer has ZERO external dependencies (pure TypeScript)
 
 - [ ] 3.0 Implement Application Layer (Use Cases & Repository Interfaces)
   - [ ] 3.1 Define `IUserRepository` interface with methods: create, findByEmail, findById, update, delete
