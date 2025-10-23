@@ -2,11 +2,11 @@
   "name": "todo-backend",
   "version": "1.0.0",
   "description": "Clean Architecture To-Do List Application - Backend API",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "dev": "nodemon --watch src --exec ts-node -r tsconfig-paths/register src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node -r tsconfig-paths/register dist/server.js",
     "test": "jest",
     "seed:postgres": "ts-node src/infrastructure/database/seeds/seedPostgres.ts",
     "seed:mongo": "ts-node src/infrastructure/database/seeds/seedMongo.ts"
@@ -42,6 +42,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.2",
     "pg": "^8.16.3",
+    "tsconfig-paths": "^4.2.0",
     "uuid": "^13.0.0",
     "zod": "^4.1.12"
   }
