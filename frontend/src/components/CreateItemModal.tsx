@@ -65,14 +65,14 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             className="fixed inset-0 flex items-center justify-center z-50 p-4"
+            onClick={(e) => e.target === e.currentTarget && onClose()}
           >
-            <div className="bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-lg w-full p-8">
-              <h2 className="text-3xl font-bold text-black mb-2 tracking-tight">New Item</h2>
-              <div className="w-12 h-0.5 bg-black mb-6"></div>
+            <div className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Add Task Details</h2>
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="item-title" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
+                  <label htmlFor="item-title" className="block text-sm font-medium text-gray-700 mb-2">
                     Title *
                   </label>
                   <input
@@ -80,15 +80,15 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Complete project proposal"
-                    className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
+                    placeholder="e.g., Complete project proposal"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                     autoFocus
                     maxLength={200}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="item-description" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
+                  <label htmlFor="item-description" className="block text-sm font-medium text-gray-700 mb-2">
                     Description
                   </label>
                   <textarea
@@ -97,14 +97,14 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Optional description..."
                     rows={3}
-                    className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none resize-none transition-all text-black"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none resize-none transition-all"
                     maxLength={1000}
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="start-date" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
+                    <label htmlFor="start-date" className="block text-sm font-medium text-gray-700 mb-2">
                       Start Date
                     </label>
                     <input
@@ -112,12 +112,12 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                       type="date"
                       value={startDate}
                       onChange={(e) => setStartDate(e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="deadline-date" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
+                    <label htmlFor="deadline-date" className="block text-sm font-medium text-gray-700 mb-2">
                       Deadline
                     </label>
                     <input
@@ -125,25 +125,25 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                       type="date"
                       value={deadlineDate}
                       onChange={(e) => setDeadlineDate(e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-all transition-all"
                     />
                   </div>
                 </div>
 
-                <div className="flex gap-3 mt-6 pt-4 border-t-2 border-gray-100">
+                <div className="flex gap-3 pt-2">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="flex-1 px-4 py-3 text-xs text-black bg-white border-2 border-black hover:bg-gray-50 font-semibold uppercase tracking-wide transition"
+                    className="flex-1 px-4 py-2.5 text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 font-medium rounded-xl transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={!title.trim() || isSubmitting}
-                    className="flex-1 px-4 py-3 text-xs bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wide transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 px-4 py-2.5 text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Creating...' : 'Create'}
+                    {isSubmitting ? 'Adding...' : 'Add Task'}
                   </button>
                 </div>
               </form>

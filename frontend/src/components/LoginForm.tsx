@@ -32,9 +32,9 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-md">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="email" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
           Email
         </label>
         <input
@@ -43,13 +43,13 @@ export const LoginForm: React.FC = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-white hover:border-gray-400"
           placeholder="you@example.com"
         />
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
+        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
           Password
         </label>
         <input
@@ -58,13 +58,13 @@ export const LoginForm: React.FC = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-white hover:border-gray-400"
           placeholder="••••••••"
         />
       </div>
 
       {error && (
-        <div className="p-4 bg-black text-white text-sm border-2 border-black">
+        <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
           {error}
         </div>
       )}
@@ -72,9 +72,9 @@ export const LoginForm: React.FC = () => {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full py-4 px-4 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-3.5 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isLoading ? 'Logging in...' : 'Log In'}
+        {isLoading ? 'Signing in...' : 'Log In'}
       </button>
     </form>
   );

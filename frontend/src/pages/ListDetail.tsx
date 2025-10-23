@@ -39,57 +39,87 @@ export const ListDetail: React.FC = () => {
   const completedCount = items.filter(item => item.isCompleted).length;
   const totalCount = items.length;
 
+  const [newTaskTitle, setNewTaskTitle] = useState('');
+
+  const handleQuickAdd = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newTaskTitle.trim()) return;
+
+    await createItem({
+      title: newTaskTitle.trim(),
+      description: null,
+      startDate: null,
+      deadlineDate: null,
+    });
+    setNewTaskTitle('');
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
       
-      <main className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <Link to="/" className="text-black hover:underline text-sm font-semibold uppercase tracking-wider inline-flex items-center">
-            ← Back to Lists
+      <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-8">
+        <div className="mb-6">
+          <Link to="/" className="text-sm text-gray-600 hover:text-gray-900 inline-flex items-center gap-1 transition-colors">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to lists
           </Link>
         </div>
 
-        <div className="flex items-center justify-between mb-12">
-          <div>
-            <h2 className="text-4xl font-bold text-black tracking-tight">Items</h2>
-            <div className="w-16 h-0.5 bg-black mt-3 mb-2"></div>
-            <p className="text-xs text-gray-600 uppercase tracking-wide">
-              {completedCount} of {totalCount} completed
-            </p>
-          </div>
-          <button
-            onClick={() => setIsCreateModalOpen(true)}
-            className="px-8 py-3 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition text-sm"
-          >
-            + New Item
-          </button>
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">Tasks</h2>
+          <p className="text-sm text-gray-600">
+            {completedCount} of {totalCount} completed
+          </p>
         </div>
 
+        {/* Frictionless Add Task Bar */}
+        <form onSubmit={handleQuickAdd} className="mb-6">
+          <div className="flex gap-3">
+            <input
+              type="text"
+              value={newTaskTitle}
+              onChange={(e) => setNewTaskTitle(e.target.value)}
+              placeholder="Add a task and press Enter..."
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-white"
+            />
+            <button
+              type="button"
+              onClick={() => setIsCreateModalOpen(true)}
+              className="px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-colors"
+              title="Add task with details"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+          </div>
+        </form>
+
         {isLoading ? (
-          <div className="text-center py-20">
-            <div className="inline-block w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-            <p className="text-gray-600 mt-4 uppercase tracking-wide text-sm">Loading...</p>
+          <div className="text-center py-12">
+            <div className="inline-block w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-sm text-gray-500 mt-3">Loading tasks...</p>
           </div>
         ) : items.length === 0 ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center py-20 border-2 border-black p-16"
+            className="text-center py-16 bg-white rounded-2xl border border-gray-200"
           >
-            <div className="text-6xl mb-6">—</div>
-            <h3 className="text-2xl font-bold text-black mb-3 tracking-tight">No items yet</h3>
-            <p className="text-gray-600 mb-8 uppercase tracking-wide text-sm">Add your first task</p>
-            <button
-              onClick={() => setIsCreateModalOpen(true)}
-              className="px-8 py-3 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition text-sm"
-            >
-              Create First Item
-            </button>
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gray-100 mb-4">
+              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-1">All clear!</h3>
+            <p className="text-sm text-gray-600">Add your first task to get started</p>
           </motion.div>
         ) : (
-          <div className="space-y-4">
-            {items.map((item) => (
+          <div className="space-y-2">
+            {items.filter(item => !item.isCompleted).map((item) => (
               <ToDoItemRow
                 key={item.id}
                 item={item}
@@ -97,6 +127,22 @@ export const ListDetail: React.FC = () => {
                 onDelete={handleDelete}
               />
             ))}
+            
+            {items.some(item => item.isCompleted) && (
+              <>
+                <div className="pt-6 pb-2">
+                  <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Completed</h4>
+                </div>
+                {items.filter(item => item.isCompleted).map((item) => (
+                  <ToDoItemRow
+                    key={item.id}
+                    item={item}
+                    onToggle={handleToggle}
+                    onDelete={handleDelete}
+                  />
+                ))}
+              </>
+            )}
           </div>
         )}
       </main>

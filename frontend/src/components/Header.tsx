@@ -17,31 +17,33 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white border-b-2 border-black">
-      <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+    <header className="bg-white border-b border-gray-200">
+      <div className="px-6 py-4">
         <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-black tracking-tight">Tasks</h1>
-            {user && (
-              <p className="text-xs text-gray-600 mt-2 uppercase tracking-wider">
-                {user.name}
-              </p>
-            )}
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-gray-900">TaskFlow</h1>
+            </div>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             {user && (
               <div className="text-right hidden sm:block">
-                <p className="text-sm font-semibold text-black">{user.name}</p>
-                <p className="text-xs text-gray-500 uppercase tracking-wide">{user.email}</p>
+                <p className="text-sm font-semibold text-gray-900">{user.name}</p>
+                <p className="text-xs text-gray-500">{user.email}</p>
               </div>
             )}
             
             <button
               onClick={handleLogout}
-              className="px-6 py-2 text-xs font-semibold text-white bg-black hover:bg-gray-900 uppercase tracking-wider transition"
+              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
             >
-              Log Out
+              Sign Out
             </button>
           </div>
         </div>
