@@ -168,7 +168,7 @@
   - [x] 2.7 Add validation methods to entities (e.g., validateTitle length for ToDoList and ToDoItem)
   - [x] 2.8 Ensure domain layer has ZERO external dependencies (pure TypeScript)
 
-- [ ] 3.0 Implement Application Layer (Use Cases & Repository Interfaces)
+- [x] 3.0 Implement Application Layer (Use Cases & Repository Interfaces)
   - [x] 3.1 Define `IUserRepository` interface with methods: create, findByEmail, findById, update, delete
   - [x] 3.2 Define `IToDoListRepository` interface with methods: create, findAllByUserId, findById, update, delete
   - [x] 3.3 Define `IToDoItemRepository` interface with methods: create, findByListId, findById, update, delete
@@ -189,19 +189,19 @@
   - [x] 3.18 Implement `DeleteToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership)
 
 - [ ] 4.0 Implement Infrastructure Layer (Database & Web API)
-  - [ ] 4.1 Implement `BcryptPasswordHasher` service using bcrypt with 10 salt rounds
-  - [ ] 4.2 Implement `JwtTokenService` using jsonwebtoken (sign with JWT_SECRET, 24h expiration)
-  - [ ] 4.3 Create PostgreSQL connection pool using `pg` library
-  - [ ] 4.4 Write PostgreSQL migration script `001_initial_schema.sql` (users, todo_lists, todo_items tables with constraints)
-  - [ ] 4.5 Implement `PostgresUserRepository` with SQL queries for all IUserRepository methods
-  - [ ] 4.6 Implement `PostgresToDoListRepository` with SQL queries and CASCADE delete support
-  - [ ] 4.7 Implement `PostgresToDoItemRepository` with SQL queries and date constraint checks
-  - [ ] 4.8 Create MongoDB connection using Mongoose
-  - [ ] 4.9 Define Mongoose schemas: UserSchema, ToDoListSchema, ToDoItemSchema (with validation)
-  - [ ] 4.10 Implement `MongoUserRepository` using Mongoose models
-  - [ ] 4.11 Implement `MongoToDoListRepository` using Mongoose models
-  - [ ] 4.12 Implement `MongoToDoItemRepository` using Mongoose models
-  - [ ] 4.13 Implement `RepositoryFactory` that returns correct repository based on DB_TYPE env variable
+  - [x] 4.1 Implement `BcryptPasswordHasher` service using bcrypt with 10 salt rounds
+  - [x] 4.2 Implement `JwtTokenService` using jsonwebtoken (sign with JWT_SECRET, 24h expiration)
+  - [x] 4.3 Create PostgreSQL connection pool using `pg` library
+  - [x] 4.4 Write PostgreSQL migration script `001_initial_schema.sql` (users, todo_lists, todo_items tables with constraints)
+  - [x] 4.5 Implement `PostgresUserRepository` with SQL queries for all IUserRepository methods
+  - [x] 4.6 Implement `PostgresToDoListRepository` with SQL queries and CASCADE delete support
+  - [x] 4.7 Implement `PostgresToDoItemRepository` with SQL queries and date constraint checks
+  - [x] 4.8 Create MongoDB connection using Mongoose
+  - [x] 4.9 Define Mongoose schemas: UserSchema, ToDoListSchema, ToDoItemSchema (with validation)
+  - [x] 4.10 Implement `MongoUserRepository` using Mongoose models
+  - [x] 4.11 Implement `MongoToDoListRepository` using Mongoose models
+  - [x] 4.12 Implement `MongoToDoItemRepository` using Mongoose models
+  - [x] 4.13 Implement `RepositoryFactory` that returns correct repository based on DB_TYPE env variable
   - [ ] 4.14 Create Express app setup with JSON parsing, CORS, and error handling middleware
   - [ ] 4.15 Implement `authenticate` middleware to verify JWT and attach userId to request
   - [ ] 4.16 Implement `authorize` middleware to verify resource ownership (for lists and items)
