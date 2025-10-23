@@ -217,16 +217,16 @@
   - [x] 4.26 Create main `index.ts` entry point that starts Express server and connects to database
 
 - [ ] 5.0 Implement Frontend Application (React UI)
-  - [ ] 5.1 Create User, ToDoList, ToDoItem TypeScript interfaces/types
-  - [ ] 5.2 Implement `tokenStorage.ts` utility (saveToken, getToken, removeToken using localStorage)
-  - [ ] 5.3 Create Axios client instance with base URL and auth token interceptor
-  - [ ] 5.4 Implement `authApi.ts` with register, login, getCurrentUser API calls
-  - [ ] 5.5 Implement `toDoListApi.ts` with all list CRUD API calls
-  - [ ] 5.6 Implement `toDoItemApi.ts` with all item CRUD API calls
-  - [ ] 5.7 Create `AuthContext` provider with login, logout, register, currentUser state
-  - [ ] 5.8 Implement `useAuth` hook to access AuthContext
-  - [ ] 5.9 Implement `useToDoLists` hook with React Query (fetch, create, update, delete)
-  - [ ] 5.10 Implement `useToDoItems` hook with React Query (fetch, create, update, toggle, delete)
+  - [x] 5.1 Create User, ToDoList, ToDoItem TypeScript interfaces/types
+  - [x] 5.2 Implement `tokenStorage.ts` utility (saveToken, getToken, removeToken using localStorage)
+  - [x] 5.3 Create Axios client instance with base URL and auth token interceptor
+  - [x] 5.4 Implement `authApi.ts` with register, login, getCurrentUser API calls
+  - [x] 5.5 Implement `toDoListApi.ts` with all list CRUD API calls
+  - [x] 5.6 Implement `toDoItemApi.ts` with all item CRUD API calls
+  - [x] 5.7 Create `AuthContext` provider with login, logout, register, currentUser state
+  - [x] 5.8 Implement `useAuth` hook to access AuthContext
+  - [x] 5.9 Implement `useToDoLists` hook with React Query (fetch, create, update, delete)
+  - [x] 5.10 Implement `useToDoItems` hook with React Query (fetch, create, update, toggle, delete)
   - [ ] 5.11 Create `ProtectedRoute` component that redirects to login if not authenticated
   - [ ] 5.12 Create `LoginForm` component with email/password fields, validation, error handling
   - [ ] 5.13 Create `RegisterForm` component with name/email/password fields, validation

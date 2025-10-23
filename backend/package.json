@@ -7,7 +7,9 @@
     "dev": "nodemon --watch src --exec ts-node src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "seed:postgres": "ts-node src/infrastructure/database/seeds/seedPostgres.ts",
+    "seed:mongo": "ts-node src/infrastructure/database/seeds/seedMongo.ts"
   },
   "keywords": [
     "clean-architecture",
