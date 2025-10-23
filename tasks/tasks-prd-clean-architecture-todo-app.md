@@ -392,7 +392,7 @@
     - Add favicon (optional)
 
 - [ ] 7.0 Integration, Testing & Documentation
-  - [ ] 7.1 Test backend with PostgreSQL:
+  - [x] 7.1 Test backend with PostgreSQL:
     - Set `DB_TYPE=postgres` in `.env`
     - Run `docker-compose up postgres backend`
     - Use Postman/Insomnia to test all API endpoints (register, login, CRUD lists, CRUD items)
@@ -440,16 +440,16 @@
     - Backend example with all required variables and placeholder values
     - Add comments explaining each variable
   - [ ] 7.9 Final testing checklist:
-    - [ ] User can register and login
-    - [ ] User can create, view, edit, delete lists
-    - [ ] User can create, view, edit, delete items
-    - [ ] User can toggle item completion
-    - [ ] Date validation prevents invalid date ranges
-    - [ ] Users only see their own data
-    - [ ] JWT authentication protects all routes
-    - [ ] App works with PostgreSQL
+    - [x] User can register and login
+    - [x] User can create, view, edit, delete lists
+    - [x] User can create, view, edit, delete items
+    - [x] User can toggle item completion
+    - [x] Date validation prevents invalid date ranges
+    - [x] Users only see their own data
+    - [x] JWT authentication protects all routes
+    - [x] App works with PostgreSQL
     - [ ] App works with MongoDB
-    - [ ] Database can be switched via env var
+    - [x] Database can be switched via env var
     - [ ] UI is responsive and matches color palette
     - [ ] No errors in browser console
   - [ ] 7.10 Optional: Create demo video or GIF:
