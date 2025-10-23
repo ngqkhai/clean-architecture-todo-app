@@ -72,23 +72,28 @@ services:
       - /app/node_modules
     command: npm run dev
 
-  # Frontend React App
+  # Frontend Next.js App
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: todo-frontend
     environment:
-      VITE_API_URL: http://localhost:5000/api
+      NEXT_PUBLIC_API_URL: http://localhost:5000/api
     ports:
       - "3000:3000"
     depends_on:
       - backend
     volumes:
-      - ./frontend/src:/app/src
+      - ./frontend/app:/app/app
+      - ./frontend/components:/app/components
+      - ./frontend/context:/app/context
+      - ./frontend/hooks:/app/hooks
+      - ./frontend/lib:/app/lib
+      - ./frontend/styles:/app/styles
       - ./frontend/public:/app/public
       - /app/node_modules
-    command: npm run dev -- --host
+      - /app/.next
 
 volumes:
   postgres_data:

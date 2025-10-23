@@ -1,0 +1,104 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles with custom color palette */
+@layer base {
+  :root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #F9F7F7; /* background color from palette */
+    color: #112D4E; /* text color from palette */
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  /* Primary button with accent color */
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply bg-accent text-white hover:bg-opacity-90 hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  /* Secondary button with secondary color */
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply bg-secondary text-text hover:bg-opacity-80 hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+  }
+
+  /* Danger button for delete actions */
+  .btn-danger {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply bg-red-500 text-white hover:bg-red-600 hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  }
+
+  /* Card component with secondary background */
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-secondary;
+    @apply hover:shadow-lg transition-shadow duration-200;
+  }
+
+  /* Input field styling */
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg border border-secondary;
+    @apply bg-white text-text placeholder-gray-400;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent;
+    @apply transition-all duration-200;
+  }
+
+  /* Text area styling */
+  .textarea-field {
+    @apply w-full px-4 py-2 rounded-lg border border-secondary;
+    @apply bg-white text-text placeholder-gray-400 resize-vertical;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent;
+    @apply transition-all duration-200;
+  }
+
+  /* Label styling */
+  .input-label {
+    @apply block text-sm font-medium text-text mb-2;
+  }
+
+  /* Error message styling */
+  .error-message {
+    @apply text-red-600 text-sm mt-1;
+  }
+
+  /* Success message styling */
+  .success-message {
+    @apply text-green-600 text-sm mt-1;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent;
+  }
+
+  /* Smooth scroll behavior */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
