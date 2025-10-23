@@ -9,19 +9,20 @@ import { LoginForm } from '../components/LoginForm';
 
 export const Login: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-          <p className="text-gray-600">Sign in to your account</p>
+    <div className="min-h-screen bg-black flex items-center justify-center p-4">
+      <div className="bg-white border-2 border-black p-10 w-full max-w-md">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-bold text-black mb-3 tracking-tight">Welcome</h1>
+          <div className="w-12 h-0.5 bg-black mx-auto mb-3"></div>
+          <p className="text-gray-600 text-sm uppercase tracking-wider">Sign in to continue</p>
         </div>
 
         <LoginForm />
 
-        <div className="mt-6 text-center">
+        <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{' '}
-            <Link to="/register" className="text-blue-600 hover:text-blue-700 font-medium">
+            <Link to="/register" className="text-black font-semibold hover:underline underline-offset-4">
               Sign up
             </Link>
           </p>

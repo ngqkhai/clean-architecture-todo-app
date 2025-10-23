@@ -41,7 +41,7 @@ export const ToDoListCard: React.FC<ToDoListCardProps> = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+      className="bg-white border-2 border-black hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all"
     >
       <div className="p-6">
         {isEditing ? (
@@ -54,19 +54,19 @@ export const ToDoListCard: React.FC<ToDoListCardProps> = ({
                 if (e.key === 'Enter') handleSave();
                 if (e.key === 'Escape') handleCancel();
               }}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              className="w-full px-3 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none"
               autoFocus
             />
-            <div className="flex gap-2 mt-2">
+            <div className="flex gap-2 mt-3">
               <button
                 onClick={handleSave}
-                className="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="flex-1 px-3 py-2 text-xs bg-black text-white hover:bg-gray-900 uppercase tracking-wide font-semibold"
               >
                 Save
               </button>
               <button
                 onClick={handleCancel}
-                className="px-3 py-1 text-sm bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
+                className="flex-1 px-3 py-2 text-xs bg-white text-black border-2 border-black hover:bg-gray-50 uppercase tracking-wide font-semibold"
               >
                 Cancel
               </button>
@@ -75,18 +75,18 @@ export const ToDoListCard: React.FC<ToDoListCardProps> = ({
         ) : (
           <>
             <Link to={`/lists/${list.id}`}>
-              <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition">
+              <h3 className="text-xl font-bold text-black hover:underline underline-offset-4 transition tracking-tight">
                 {list.title}
               </h3>
             </Link>
-            <p className="text-sm text-gray-500 mt-1">{itemCount} items</p>
+            <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">{itemCount} items</p>
           </>
         )}
 
-        <div className="flex gap-2 mt-4">
+        <div className="flex gap-2 mt-6 pt-4 border-t-2 border-gray-100">
           <button
             onClick={() => setIsEditing(true)}
-            className="flex-1 px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition"
+            className="flex-1 px-3 py-2 text-xs font-semibold text-black bg-white border-2 border-black hover:bg-black hover:text-white uppercase tracking-wide transition"
           >
             Edit
           </button>
@@ -96,7 +96,7 @@ export const ToDoListCard: React.FC<ToDoListCardProps> = ({
                 onDelete(list.id);
               }
             }}
-            className="flex-1 px-3 py-2 text-sm font-medium text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition"
+            className="flex-1 px-3 py-2 text-xs font-semibold text-white bg-black hover:bg-gray-900 uppercase tracking-wide transition"
           >
             Delete
           </button>

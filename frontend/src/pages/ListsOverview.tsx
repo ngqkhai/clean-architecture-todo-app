@@ -27,36 +27,40 @@ export const ListsOverview: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-gray-900">Your Lists</h2>
+      <main className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between mb-12">
+          <div>
+            <h2 className="text-4xl font-bold text-black tracking-tight">Your Lists</h2>
+            <div className="w-16 h-0.5 bg-black mt-3"></div>
+          </div>
           <button
             onClick={() => setIsCreateModalOpen(true)}
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition shadow-sm"
+            className="px-8 py-3 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition text-sm"
           >
             + New List
           </button>
         </div>
 
         {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-gray-600">Loading your lists...</p>
+          <div className="text-center py-20">
+            <div className="inline-block w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-gray-600 mt-4 uppercase tracking-wide text-sm">Loading...</p>
           </div>
         ) : lists.length === 0 ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center py-16"
+            className="text-center py-20 border-2 border-black p-16"
           >
-            <div className="text-6xl mb-4">📝</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No lists yet</h3>
-            <p className="text-gray-600 mb-6">Create your first to-do list to get started!</p>
+            <div className="text-6xl mb-6">—</div>
+            <h3 className="text-2xl font-bold text-black mb-3 tracking-tight">No lists yet</h3>
+            <p className="text-gray-600 mb-8 uppercase tracking-wide text-sm">Create your first list to begin</p>
             <button
               onClick={() => setIsCreateModalOpen(true)}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition inline-block"
+              className="px-8 py-3 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition text-sm"
             >
               Create Your First List
             </button>

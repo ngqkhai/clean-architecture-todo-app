@@ -40,53 +40,55 @@ export const ListDetail: React.FC = () => {
   const totalCount = items.length;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mb-6">
-          <Link to="/" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+      <main className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <Link to="/" className="text-black hover:underline text-sm font-semibold uppercase tracking-wider inline-flex items-center">
             ← Back to Lists
           </Link>
         </div>
 
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">List Items</h2>
-            <p className="text-sm text-gray-600 mt-1">
+            <h2 className="text-4xl font-bold text-black tracking-tight">Items</h2>
+            <div className="w-16 h-0.5 bg-black mt-3 mb-2"></div>
+            <p className="text-xs text-gray-600 uppercase tracking-wide">
               {completedCount} of {totalCount} completed
             </p>
           </div>
           <button
             onClick={() => setIsCreateModalOpen(true)}
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition shadow-sm"
+            className="px-8 py-3 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition text-sm"
           >
             + New Item
           </button>
         </div>
 
         {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-gray-600">Loading items...</p>
+          <div className="text-center py-20">
+            <div className="inline-block w-8 h-8 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-gray-600 mt-4 uppercase tracking-wide text-sm">Loading...</p>
           </div>
         ) : items.length === 0 ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center py-16"
+            className="text-center py-20 border-2 border-black p-16"
           >
-            <div className="text-6xl mb-4">✅</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No items yet</h3>
-            <p className="text-gray-600 mb-6">Add your first task to this list!</p>
+            <div className="text-6xl mb-6">—</div>
+            <h3 className="text-2xl font-bold text-black mb-3 tracking-tight">No items yet</h3>
+            <p className="text-gray-600 mb-8 uppercase tracking-wide text-sm">Add your first task</p>
             <button
               onClick={() => setIsCreateModalOpen(true)}
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition inline-block"
+              className="px-8 py-3 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition text-sm"
             >
               Create First Item
             </button>
           </motion.div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-4">
             {items.map((item) => (
               <ToDoItemRow
                 key={item.id}

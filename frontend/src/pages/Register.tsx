@@ -9,19 +9,20 @@ import { RegisterForm } from '../components/RegisterForm';
 
 export const Register: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
-          <p className="text-gray-600">Get started with your to-do lists</p>
+    <div className="min-h-screen bg-black flex items-center justify-center p-4">
+      <div className="bg-white border-2 border-black p-10 w-full max-w-md">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-bold text-black mb-3 tracking-tight">Join Us</h1>
+          <div className="w-12 h-0.5 bg-black mx-auto mb-3"></div>
+          <p className="text-gray-600 text-sm uppercase tracking-wider">Create your account</p>
         </div>
 
         <RegisterForm />
 
-        <div className="mt-6 text-center">
+        <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{' '}
-            <Link to="/login" className="text-blue-600 hover:text-blue-700 font-medium">
+            <Link to="/login" className="text-black font-semibold hover:underline underline-offset-4">
               Sign in
             </Link>
           </p>

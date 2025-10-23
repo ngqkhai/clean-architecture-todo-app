@@ -40,9 +40,9 @@ export const RegisterForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-md">
+    <form onSubmit={handleSubmit} className="space-y-5 w-full max-w-md">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="name" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
           Name
         </label>
         <input
@@ -51,13 +51,13 @@ export const RegisterForm: React.FC = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+          className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
           placeholder="John Doe"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="email" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
           Email
         </label>
         <input
@@ -66,13 +66,13 @@ export const RegisterForm: React.FC = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+          className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
           placeholder="you@example.com"
         />
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="password" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
           Password
         </label>
         <input
@@ -82,14 +82,14 @@ export const RegisterForm: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
           minLength={8}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+          className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
           placeholder="••••••••"
         />
-        <p className="mt-1 text-xs text-gray-500">Must be at least 8 characters</p>
+        <p className="mt-1 text-xs text-gray-500 uppercase tracking-wide">Min. 8 characters</p>
       </div>
 
       {error && (
-        <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
+        <div className="p-4 bg-black text-white text-sm border-2 border-black">
           {error}
         </div>
       )}
@@ -97,7 +97,7 @@ export const RegisterForm: React.FC = () => {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-4 px-4 bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wider transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isLoading ? 'Creating account...' : 'Sign Up'}
       </button>

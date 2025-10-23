@@ -66,12 +66,13 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
             exit={{ opacity: 0, scale: 0.95 }}
             className="fixed inset-0 flex items-center justify-center z-50 p-4"
           >
-            <div className="bg-white rounded-xl shadow-xl max-w-lg w-full p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Create New Item</h2>
+            <div className="bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-lg w-full p-8">
+              <h2 className="text-3xl font-bold text-black mb-2 tracking-tight">New Item</h2>
+              <div className="w-12 h-0.5 bg-black mb-6"></div>
               
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="item-title" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="item-title" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
                     Title *
                   </label>
                   <input
@@ -79,15 +80,15 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder="e.g., Complete project proposal"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    placeholder="Complete project proposal"
+                    className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
                     autoFocus
                     maxLength={200}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="item-description" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="item-description" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
                     Description
                   </label>
                   <textarea
@@ -96,14 +97,14 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                     onChange={(e) => setDescription(e.target.value)}
                     placeholder="Optional description..."
                     rows={3}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none"
+                    className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none resize-none transition-all text-black"
                     maxLength={1000}
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="start-date" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="start-date" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
                       Start Date
                     </label>
                     <input
@@ -111,12 +112,12 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                       type="date"
                       value={startDate}
                       onChange={(e) => setStartDate(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                      className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="deadline-date" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="deadline-date" className="block text-xs font-semibold text-black mb-2 uppercase tracking-wider">
                       Deadline
                     </label>
                     <input
@@ -124,23 +125,23 @@ export const CreateItemModal: React.FC<CreateItemModalProps> = ({
                       type="date"
                       value={deadlineDate}
                       onChange={(e) => setDeadlineDate(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                      className="w-full px-4 py-3 border-2 border-black bg-white focus:bg-gray-50 outline-none transition-all text-black"
                     />
                   </div>
                 </div>
 
-                <div className="flex gap-3 mt-6">
+                <div className="flex gap-3 mt-6 pt-4 border-t-2 border-gray-100">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="flex-1 px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition"
+                    className="flex-1 px-4 py-3 text-xs text-black bg-white border-2 border-black hover:bg-gray-50 font-semibold uppercase tracking-wide transition"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={!title.trim() || isSubmitting}
-                    className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 px-4 py-3 text-xs bg-black hover:bg-gray-900 text-white font-semibold uppercase tracking-wide transition disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Creating...' : 'Create'}
                   </button>
