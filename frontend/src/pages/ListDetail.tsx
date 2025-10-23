@@ -4,16 +4,16 @@
  */
 
 import React, { useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { ToDoItemRow } from '../components/ToDoItemRow';
 import { CreateItemModal } from '../components/CreateItemModal';
 import { useToDoItems } from '../hooks/useToDoItems';
+import { CreateItemRequest } from '../types';
 import { motion } from 'framer-motion';
 
 export const ListDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   
   const {
@@ -23,6 +23,10 @@ export const ListDetail: React.FC = () => {
     toggleItem,
     deleteItem,
   } = useToDoItems(id!);
+
+  const handleCreate = async (data: CreateItemRequest) => {
+    await createItem(data);
+  };
 
   const handleToggle = async (itemId: string) => {
     await toggleItem(itemId);
@@ -98,7 +102,7 @@ export const ListDetail: React.FC = () => {
       <CreateItemModal
         isOpen={isCreateModalOpen}
         onClose={() => setIsCreateModalOpen(false)}
-        onCreate={createItem}
+        onCreate={handleCreate}
       />
     </div>
   );
