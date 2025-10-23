@@ -124,13 +124,13 @@ to-do/
 
 This project successfully demonstrates:
 
-✅ **Clean Architecture:** Clear separation of concerns across 4 layers.
-✅ **The Dependency Rule:** Dependencies point inward.
-✅ **Repository Pattern:** Abstraction over data access.
-✅ **Factory Pattern:** Runtime selection of implementations.
-✅ **Dependency Injection:** Injecting dependencies (like repositories) into controllers and use cases.
-✅ **Domain-Driven Design:** Business rules are isolated in the Domain layer.
-✅ **Database Independence:** Swap SQL ↔ NoSQL with zero code changes.
+- **Clean Architecture:** Clear separation of concerns across 4 layers.
+- **The Dependency Rule:** Dependencies point inward.
+- **Repository Pattern:** Abstraction over data access.
+- **Factory Pattern:** Runtime selection of implementations.
+- **Dependency Injection:** Injecting dependencies (like repositories) into controllers and use cases.
+- **Domain-Driven Design:** Business rules are isolated in the Domain layer.
+- **Database Independence:** Swap SQL ↔ NoSQL with zero code changes.
 
 ---
 
