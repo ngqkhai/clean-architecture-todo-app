@@ -59,6 +59,10 @@ export class ToDoListController {
       }
 
       const { id } = req.params;
+      if (!id) {
+        throw new Error('List ID is required');
+      }
+
       const listRepository = RepositoryFactory.createToDoListRepository();
       const useCase = new GetToDoListById(listRepository);
       
@@ -80,6 +84,10 @@ export class ToDoListController {
       }
 
       const { id } = req.params;
+      if (!id) {
+        throw new Error('List ID is required');
+      }
+
       const { title } = req.body;
       const listRepository = RepositoryFactory.createToDoListRepository();
       const useCase = new UpdateToDoList(listRepository);
@@ -103,10 +111,14 @@ export class ToDoListController {
       }
 
       const { id } = req.params;
+      if (!id) {
+        throw new Error('List ID is required');
+      }
+
       const listRepository = RepositoryFactory.createToDoListRepository();
       const useCase = new DeleteToDoList(listRepository);
       
-      const result = await useCase.execute({
+      await useCase.execute({
         listId: id,
         userId: req.userId,
       });

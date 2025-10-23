@@ -4,7 +4,7 @@
  * This belongs to the Infrastructure Layer
  */
 
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { ITokenService, TokenPayload } from '@application/services/ITokenService';
 
 export class JwtTokenService implements ITokenService {

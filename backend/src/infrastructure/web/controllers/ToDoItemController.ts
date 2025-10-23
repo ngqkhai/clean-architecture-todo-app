@@ -21,6 +21,10 @@ export class ToDoItemController {
       }
 
       const { listId } = req.params;
+      if (!listId) {
+        throw new Error('List ID is required');
+      }
+
       const { title, description, startDate, deadlineDate } = req.body;
 
       const itemRepository = RepositoryFactory.createToDoItemRepository();
@@ -49,6 +53,9 @@ export class ToDoItemController {
       }
 
       const { listId } = req.params;
+      if (!listId) {
+        throw new Error('List ID is required');
+      }
       
       const itemRepository = RepositoryFactory.createToDoItemRepository();
       const listRepository = RepositoryFactory.createToDoListRepository();
@@ -72,6 +79,10 @@ export class ToDoItemController {
       }
 
       const { id } = req.params;
+      if (!id) {
+        throw new Error('Item ID is required');
+      }
+
       const { title, description, startDate, deadlineDate } = req.body;
 
       const itemRepository = RepositoryFactory.createToDoItemRepository();
@@ -100,6 +111,9 @@ export class ToDoItemController {
       }
 
       const { id } = req.params;
+      if (!id) {
+        throw new Error('Item ID is required');
+      }
 
       const itemRepository = RepositoryFactory.createToDoItemRepository();
       const listRepository = RepositoryFactory.createToDoListRepository();
@@ -123,12 +137,15 @@ export class ToDoItemController {
       }
 
       const { id } = req.params;
+      if (!id) {
+        throw new Error('Item ID is required');
+      }
 
       const itemRepository = RepositoryFactory.createToDoItemRepository();
       const listRepository = RepositoryFactory.createToDoListRepository();
       const useCase = new DeleteToDoItem(itemRepository, listRepository);
       
-      const result = await useCase.execute({
+      await useCase.execute({
         itemId: id,
         userId: req.userId,
       });

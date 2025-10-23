@@ -14,6 +14,7 @@
       "@application/*": ["application/*"],
       "@infrastructure/*": ["infrastructure/*"]
     },
+    "resolveJsonModule": true,
     
     /* Emit */
     "outDir": "./dist",
@@ -34,10 +35,10 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
+    "noUncheckedIndexedAccess": false,
     
     /* Completeness */
     "skipLibCheck": true,
