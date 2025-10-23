@@ -24,9 +24,8 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy package files and tsconfig
+# Copy package files
 COPY package*.json ./
-COPY tsconfig.json ./
 
 # Install production dependencies only
 RUN npm ci --only=production
@@ -44,6 +43,6 @@ EXPOSE 3000
 # Set environment to production
 ENV NODE_ENV=production
 
-# Start the application with tsconfig-paths
-CMD ["node", "-r", "tsconfig-paths/register", "dist/server.js"]
+# Start the application
+CMD ["node", "dist/index.js"]
 
