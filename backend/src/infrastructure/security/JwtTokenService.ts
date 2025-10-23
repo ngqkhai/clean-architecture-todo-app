@@ -4,7 +4,7 @@
  * This belongs to the Infrastructure Layer
  */
 
-import jwt, { SignOptions } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { ITokenService, TokenPayload } from '@application/services/ITokenService';
 
 export class JwtTokenService implements ITokenService {
@@ -25,11 +25,9 @@ export class JwtTokenService implements ITokenService {
       email,
     };
 
-    const options: SignOptions = {
-      expiresIn: this.expiresIn,
-    };
-
-    return jwt.sign(payload, this.secret, options);
+    return jwt.sign(payload, this.secret, {
+      expiresIn: this.expiresIn as string | number,
+    });
   }
 
   verify(token: string): TokenPayload {
