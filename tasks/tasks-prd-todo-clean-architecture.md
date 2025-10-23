@@ -188,7 +188,7 @@
   - [x] 3.17 Implement `ToggleItemCompletion` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership)
   - [x] 3.18 Implement `DeleteToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership)
 
-- [ ] 4.0 Implement Infrastructure Layer (Database & Web API)
+- [x] 4.0 Implement Infrastructure Layer (Database & Web API)
   - [x] 4.1 Implement `BcryptPasswordHasher` service using bcrypt with 10 salt rounds
   - [x] 4.2 Implement `JwtTokenService` using jsonwebtoken (sign with JWT_SECRET, 24h expiration)
   - [x] 4.3 Create PostgreSQL connection pool using `pg` library
@@ -202,19 +202,19 @@
   - [x] 4.11 Implement `MongoToDoListRepository` using Mongoose models
   - [x] 4.12 Implement `MongoToDoItemRepository` using Mongoose models
   - [x] 4.13 Implement `RepositoryFactory` that returns correct repository based on DB_TYPE env variable
-  - [ ] 4.14 Create Express app setup with JSON parsing, CORS, and error handling middleware
-  - [ ] 4.15 Implement `authenticate` middleware to verify JWT and attach userId to request
-  - [ ] 4.16 Implement `authorize` middleware to verify resource ownership (for lists and items)
-  - [ ] 4.17 Implement global `errorHandler` middleware for consistent error responses
-  - [ ] 4.18 Implement `validator` middleware using Zod for request body validation
-  - [ ] 4.19 Implement `AuthController` with endpoints: POST /auth/register, POST /auth/login, GET /auth/me
-  - [ ] 4.20 Implement `ToDoListController` with all CRUD endpoints (all protected)
-  - [ ] 4.21 Implement `ToDoItemController` with all CRUD endpoints (all protected)
-  - [ ] 4.22 Define Express routes for auth (public), lists (protected), and items (protected)
-  - [ ] 4.23 Create seed data file with 2 users, 3 lists, 6 items (hashed passwords)
-  - [ ] 4.24 Create seed script for PostgreSQL
-  - [ ] 4.25 Create seed script for MongoDB
-  - [ ] 4.26 Create main `index.ts` entry point that starts Express server and connects to database
+  - [x] 4.14 Create Express app setup with JSON parsing, CORS, and error handling middleware
+  - [x] 4.15 Implement `authenticate` middleware to verify JWT and attach userId to request
+  - [x] 4.16 Implement `authorize` middleware to verify resource ownership (for lists and items)
+  - [x] 4.17 Implement global `errorHandler` middleware for consistent error responses
+  - [x] 4.18 Implement `validator` middleware using Zod for request body validation
+  - [x] 4.19 Implement `AuthController` with endpoints: POST /auth/register, POST /auth/login, GET /auth/me
+  - [x] 4.20 Implement `ToDoListController` with all CRUD endpoints (all protected)
+  - [x] 4.21 Implement `ToDoItemController` with all CRUD endpoints (all protected)
+  - [x] 4.22 Define Express routes for auth (public), lists (protected), and items (protected)
+  - [x] 4.23 Create seed data file with 2 users, 3 lists, 6 items (hashed passwords)
+  - [x] 4.24 Create seed script for PostgreSQL
+  - [x] 4.25 Create seed script for MongoDB
+  - [x] 4.26 Create main `index.ts` entry point that starts Express server and connects to database
 
 - [ ] 5.0 Implement Frontend Application (React UI)
   - [ ] 5.1 Create User, ToDoList, ToDoItem TypeScript interfaces/types
