@@ -158,7 +158,7 @@
   - [x] 1.9 Create `.gitignore` file (ignore node_modules, .env, dist, build folders)
   - [x] 1.10 Install backend core dependencies (express, dotenv, cors, jsonwebtoken, bcrypt, pg, mongoose, zod)
 
-- [ ] 2.0 Implement Domain Layer (Core Business Logic)
+- [x] 2.0 Implement Domain Layer (Core Business Logic)
   - [x] 2.1 Create `User` entity with properties: id, email, name, passwordHash, createdAt, updatedAt
   - [x] 2.2 Create `Email` value object with email format validation
   - [x] 2.3 Create `Password` value object with minimum length validation (min 8 characters)
@@ -169,24 +169,24 @@
   - [x] 2.8 Ensure domain layer has ZERO external dependencies (pure TypeScript)
 
 - [ ] 3.0 Implement Application Layer (Use Cases & Repository Interfaces)
-  - [ ] 3.1 Define `IUserRepository` interface with methods: create, findByEmail, findById, update, delete
-  - [ ] 3.2 Define `IToDoListRepository` interface with methods: create, findAllByUserId, findById, update, delete
-  - [ ] 3.3 Define `IToDoItemRepository` interface with methods: create, findByListId, findById, update, delete
-  - [ ] 3.4 Define `IPasswordHasher` service interface with methods: hash(password), compare(password, hash)
-  - [ ] 3.5 Define `ITokenService` service interface with methods: generate(userId, email), verify(token)
-  - [ ] 3.6 Implement `RegisterUser` use case (takes IUserRepository, IPasswordHasher; validates email uniqueness, hashes password)
-  - [ ] 3.7 Implement `LoginUser` use case (takes IUserRepository, IPasswordHasher, ITokenService; validates credentials, returns JWT)
-  - [ ] 3.8 Implement `GetCurrentUser` use case (takes IUserRepository; returns user by ID from token)
-  - [ ] 3.9 Implement `CreateToDoList` use case (takes IToDoListRepository; validates title, associates with userId)
-  - [ ] 3.10 Implement `GetAllToDoListsByUser` use case (takes IToDoListRepository; returns only user's lists)
-  - [ ] 3.11 Implement `GetToDoListById` use case (takes IToDoListRepository; verifies ownership)
-  - [ ] 3.12 Implement `UpdateToDoList` use case (takes IToDoListRepository; verifies ownership, validates new title)
-  - [ ] 3.13 Implement `DeleteToDoList` use case (takes IToDoListRepository; verifies ownership, cascades delete)
-  - [ ] 3.14 Implement `CreateToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies list ownership, validates dates)
-  - [ ] 3.15 Implement `GetItemsByList` use case (takes IToDoItemRepository, IToDoListRepository; verifies list ownership)
-  - [ ] 3.16 Implement `UpdateToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership, validates dates)
-  - [ ] 3.17 Implement `ToggleItemCompletion` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership)
-  - [ ] 3.18 Implement `DeleteToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership)
+  - [x] 3.1 Define `IUserRepository` interface with methods: create, findByEmail, findById, update, delete
+  - [x] 3.2 Define `IToDoListRepository` interface with methods: create, findAllByUserId, findById, update, delete
+  - [x] 3.3 Define `IToDoItemRepository` interface with methods: create, findByListId, findById, update, delete
+  - [x] 3.4 Define `IPasswordHasher` service interface with methods: hash(password), compare(password, hash)
+  - [x] 3.5 Define `ITokenService` service interface with methods: generate(userId, email), verify(token)
+  - [x] 3.6 Implement `RegisterUser` use case (takes IUserRepository, IPasswordHasher; validates email uniqueness, hashes password)
+  - [x] 3.7 Implement `LoginUser` use case (takes IUserRepository, IPasswordHasher, ITokenService; validates credentials, returns JWT)
+  - [x] 3.8 Implement `GetCurrentUser` use case (takes IUserRepository; returns user by ID from token)
+  - [x] 3.9 Implement `CreateToDoList` use case (takes IToDoListRepository; validates title, associates with userId)
+  - [x] 3.10 Implement `GetAllToDoListsByUser` use case (takes IToDoListRepository; returns only user's lists)
+  - [x] 3.11 Implement `GetToDoListById` use case (takes IToDoListRepository; verifies ownership)
+  - [x] 3.12 Implement `UpdateToDoList` use case (takes IToDoListRepository; verifies ownership, validates new title)
+  - [x] 3.13 Implement `DeleteToDoList` use case (takes IToDoListRepository; verifies ownership, cascades delete)
+  - [x] 3.14 Implement `CreateToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies list ownership, validates dates)
+  - [x] 3.15 Implement `GetItemsByList` use case (takes IToDoItemRepository, IToDoListRepository; verifies list ownership)
+  - [x] 3.16 Implement `UpdateToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership, validates dates)
+  - [x] 3.17 Implement `ToggleItemCompletion` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership)
+  - [x] 3.18 Implement `DeleteToDoItem` use case (takes IToDoItemRepository, IToDoListRepository; verifies ownership)
 
 - [ ] 4.0 Implement Infrastructure Layer (Database & Web API)
   - [ ] 4.1 Implement `BcryptPasswordHasher` service using bcrypt with 10 salt rounds
