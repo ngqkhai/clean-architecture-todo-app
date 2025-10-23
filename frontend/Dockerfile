@@ -1,9 +1,8 @@
-# Frontend Dockerfile
-# Multi-stage build for optimized production image
+# Frontend Dockerfile for Clean Architecture To-Do App
 
-# Stage 1: Build
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
+# Set working directory
 WORKDIR /app
 
 # Copy package files
@@ -12,24 +11,12 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy source files and config
+# Copy source code
 COPY . .
 
-# Build the application
-RUN npm run build
-
-# Stage 2: Production with nginx
-FROM nginx:alpine
-
-# Copy built assets from builder
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Copy nginx configuration (for SPA routing)
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
 # Expose port
-EXPOSE 80
+EXPOSE 3000
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start development server
+CMD ["npm", "run", "dev", "--", "--host"]
 

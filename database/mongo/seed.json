@@ -1,0 +1,202 @@
+{
+  "users": [
+    {
+      "_id": { "$oid": "507f1f77bcf86cd799439011" },
+      "email": "alice@example.com",
+      "passwordHash": "$2b$10$rBV2HBq1J3YkJX7xV2bHNO3V8JL0LvVxNHQXxPJ0gOGM7RJ8aLzJO",
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "507f1f77bcf86cd799439022" },
+      "email": "bob@example.com",
+      "passwordHash": "$2b$10$YVuC0YQdHBjH4J9xI3xJCerF1P1KQ9WLJZqVVDQ7nDQJ1EL4Q1UdC",
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    }
+  ],
+  "todoLists": [
+    {
+      "_id": { "$oid": "607f1f77bcf86cd799439033" },
+      "title": "Work Projects",
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "607f1f77bcf86cd799439044" },
+      "title": "Home Chores",
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "607f1f77bcf86cd799439055" },
+      "title": "Personal Goals",
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "607f1f77bcf86cd799439066" },
+      "title": "Shopping List",
+      "userId": { "$oid": "507f1f77bcf86cd799439022" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "607f1f77bcf86cd799439077" },
+      "title": "Fitness Routine",
+      "userId": { "$oid": "507f1f77bcf86cd799439022" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    }
+  ],
+  "todoItems": [
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439111" },
+      "title": "Complete API documentation",
+      "description": "Finish documenting all REST endpoints",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439033" },
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "startDate": { "$date": "2025-10-23T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-10-30T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439222" },
+      "title": "Review pull requests",
+      "description": "Review 3 pending PRs from the team",
+      "isCompleted": true,
+      "listId": { "$oid": "607f1f77bcf86cd799439033" },
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "startDate": { "$date": "2025-10-21T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-10-23T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439333" },
+      "title": "Prepare presentation",
+      "description": "Create slides for quarterly review meeting",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439033" },
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "startDate": { "$date": "2025-10-23T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-11-06T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439444" },
+      "title": "Clean garage",
+      "description": "",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439044" },
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "startDate": null,
+      "deadlineDate": { "$date": "2025-10-26T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439555" },
+      "title": "Fix leaky faucet",
+      "description": "Call plumber or fix DIY",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439044" },
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "startDate": null,
+      "deadlineDate": null,
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439666" },
+      "title": "Grocery shopping",
+      "description": "Buy milk, eggs, bread, vegetables",
+      "isCompleted": true,
+      "listId": { "$oid": "607f1f77bcf86cd799439044" },
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "startDate": { "$date": "2025-10-22T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-10-22T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439777" },
+      "title": "Read 2 books this month",
+      "description": "Currently reading Clean Architecture by Robert Martin",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439055" },
+      "userId": { "$oid": "507f1f77bcf86cd799439011" },
+      "startDate": { "$date": "2025-10-23T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-11-22T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439888" },
+      "title": "Buy new running shoes",
+      "description": "Size 10, prefer Nike or Adidas",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439066" },
+      "userId": { "$oid": "507f1f77bcf86cd799439022" },
+      "startDate": null,
+      "deadlineDate": null,
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439999" },
+      "title": "Get birthday gift for Mom",
+      "description": "Her birthday is next week!",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439066" },
+      "userId": { "$oid": "507f1f77bcf86cd799439022" },
+      "startDate": null,
+      "deadlineDate": { "$date": "2025-10-30T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439aaa" },
+      "title": "Morning run - 5km",
+      "description": "Start week with good energy",
+      "isCompleted": true,
+      "listId": { "$oid": "607f1f77bcf86cd799439077" },
+      "userId": { "$oid": "507f1f77bcf86cd799439022" },
+      "startDate": { "$date": "2025-10-22T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-10-22T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439bbb" },
+      "title": "Gym session - Upper body",
+      "description": "Focus on chest and arms",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439077" },
+      "userId": { "$oid": "507f1f77bcf86cd799439022" },
+      "startDate": { "$date": "2025-10-23T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-10-23T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    },
+    {
+      "_id": { "$oid": "707f1f77bcf86cd799439ccc" },
+      "title": "Yoga class",
+      "description": "Wednesday evening at 7 PM",
+      "isCompleted": false,
+      "listId": { "$oid": "607f1f77bcf86cd799439077" },
+      "userId": { "$oid": "507f1f77bcf86cd799439022" },
+      "startDate": { "$date": "2025-10-25T12:00:00.000Z" },
+      "deadlineDate": { "$date": "2025-10-25T12:00:00.000Z" },
+      "createdAt": { "$date": "2025-10-23T12:00:00.000Z" },
+      "updatedAt": { "$date": "2025-10-23T12:00:00.000Z" }
+    }
+  ]
+}
+
