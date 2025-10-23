@@ -26,8 +26,8 @@ export class JwtTokenService implements ITokenService {
     };
 
     return jwt.sign(payload, this.secret, {
-      expiresIn: this.expiresIn as string | number,
-    });
+      expiresIn: this.expiresIn,
+    } as any);
   }
 
   verify(token: string): TokenPayload {
