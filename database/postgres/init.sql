@@ -2,23 +2,18 @@
 -- This runs BEFORE schema.sql to ensure the database and user exist
 
 -- Note: This script runs as the postgres superuser
--- The database 'tododb' is created via POSTGRES_DB env variable
--- The user 'todouser' is created via POSTGRES_USER env variable
--- But we need to ensure proper permissions
+-- The database 'tododb' is already created via POSTGRES_DB env variable
+-- The user 'todouser' is already created via POSTGRES_USER env variable
+-- This file is just a backup/documentation
 
--- Grant all privileges to todouser on the database
--- (The user and database are already created by PostgreSQL from env vars)
+-- If you need to create them manually:
+-- CREATE DATABASE tododb;
+-- CREATE USER todouser WITH ENCRYPTED PASSWORD 'todopass';
+-- GRANT ALL PRIVILEGES ON DATABASE tododb TO todouser;
 
--- Connect to the tododb database
-\c tododb;
+-- Set the search path
+SET search_path TO public;
 
--- Grant schema permissions
-GRANT ALL ON SCHEMA public TO todouser;
-
--- Ensure the uuid extension is available
+-- This ensures the uuid extension is available
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
--- Grant default privileges for future tables
-ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO todouser;
-ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO todouser;
 

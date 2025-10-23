@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: todopass
       POSTGRES_DB: tododb
     ports:
-      - "5433:5432"
+      - "5433:5432"  # Changed to 5433 to avoid conflict with local PostgreSQL
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/postgres:/docker-entrypoint-initdb.d
