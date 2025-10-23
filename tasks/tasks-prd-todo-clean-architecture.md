@@ -216,7 +216,7 @@
   - [x] 4.25 Create seed script for MongoDB
   - [x] 4.26 Create main `index.ts` entry point that starts Express server and connects to database
 
-- [ ] 5.0 Implement Frontend Application (React UI)
+- [x] 5.0 Implement Frontend Application (React UI)
   - [x] 5.1 Create User, ToDoList, ToDoItem TypeScript interfaces/types
   - [x] 5.2 Implement `tokenStorage.ts` utility (saveToken, getToken, removeToken using localStorage)
   - [x] 5.3 Create Axios client instance with base URL and auth token interceptor
@@ -227,26 +227,26 @@
   - [x] 5.8 Implement `useAuth` hook to access AuthContext
   - [x] 5.9 Implement `useToDoLists` hook with React Query (fetch, create, update, delete)
   - [x] 5.10 Implement `useToDoItems` hook with React Query (fetch, create, update, toggle, delete)
-  - [ ] 5.11 Create `ProtectedRoute` component that redirects to login if not authenticated
-  - [ ] 5.12 Create `LoginForm` component with email/password fields, validation, error handling
-  - [ ] 5.13 Create `RegisterForm` component with name/email/password fields, validation
-  - [ ] 5.14 Create `Login` page that uses LoginForm
-  - [ ] 5.15 Create `Register` page that uses RegisterForm
-  - [ ] 5.16 Create `Header` component displaying user name/email and logout button
-  - [ ] 5.17 Create `ToDoListCard` component with title, item count, edit/delete buttons
-  - [ ] 5.18 Create `CreateListModal` component with form to create new list
-  - [ ] 5.19 Create `ListsOverview` page displaying all user's lists in a grid
-  - [ ] 5.20 Create `ToDoItemRow` component with checkbox, title, dates, overdue indicator, edit/delete buttons
-  - [ ] 5.21 Create `CreateItemModal` component with form for title, description, dates
-  - [ ] 5.22 Create `ListDetail` page displaying all items in a list with create button
-  - [ ] 5.23 Implement visual status indicators (red for overdue, yellow for upcoming, gray for completed)
-  - [ ] 5.24 Add Framer Motion animations for list/item creation, deletion, checkbox toggle
-  - [ ] 5.25 Create `AuthLayout` for login/register pages (centered, minimal)
-  - [ ] 5.26 Create `MainLayout` with Header and main content area
-  - [ ] 5.27 Set up React Router with routes: /login, /register, / (lists), /lists/:id (items)
-  - [ ] 5.28 Implement route protection so unauthenticated users redirect to /login
-  - [ ] 5.29 Add loading states and error toasts using a toast library (react-hot-toast or similar)
-  - [ ] 5.30 Apply Tailwind CSS styling following the color palette from PRD (indigo primary, gray backgrounds)
+  - [x] 5.11 Create `ProtectedRoute` component that redirects to login if not authenticated
+  - [x] 5.12 Create `LoginForm` component with email/password fields, validation, error handling
+  - [x] 5.13 Create `RegisterForm` component with name/email/password fields, validation
+  - [x] 5.14 Create `Login` page that uses LoginForm
+  - [x] 5.15 Create `Register` page that uses RegisterForm
+  - [x] 5.16 Create `Header` component displaying user name/email and logout button
+  - [x] 5.17 Create `ToDoListCard` component with title, item count, edit/delete buttons
+  - [x] 5.18 Create `CreateListModal` component with form to create new list
+  - [x] 5.19 Create `ListsOverview` page displaying all user's lists in a grid
+  - [x] 5.20 Create `ToDoItemRow` component with checkbox, title, dates, overdue indicator, edit/delete buttons
+  - [x] 5.21 Create `CreateItemModal` component with form for title, description, dates
+  - [x] 5.22 Create `ListDetail` page displaying all items in a list with create button
+  - [x] 5.23 Implement visual status indicators (red for overdue, yellow for upcoming, gray for completed)
+  - [x] 5.24 Add Framer Motion animations for list/item creation, deletion, checkbox toggle
+  - [x] 5.25 Create `AuthLayout` for login/register pages (centered, minimal)
+  - [x] 5.26 Create `MainLayout` with Header and main content area
+  - [x] 5.27 Set up React Router with routes: /login, /register, / (lists), /lists/:id (items)
+  - [x] 5.28 Implement route protection so unauthenticated users redirect to /login
+  - [x] 5.29 Add loading states and error toasts using a toast library (react-hot-toast or similar)
+  - [x] 5.30 Apply Tailwind CSS styling following the color palette from PRD (indigo primary, gray backgrounds)
   - [ ] 5.31 Make UI fully responsive (mobile, tablet, desktop breakpoints)
 
 - [ ] 6.0 Docker Configuration & Deployment Setup
