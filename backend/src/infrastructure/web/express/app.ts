@@ -26,7 +26,7 @@ export function createApp(): Application {
   // API Routes
   app.use('/api/auth', authRoutes);
   app.use('/api/lists', listRoutes);
-  app.use('/api/items', itemRoutes);
+  app.use('/api', itemRoutes);
 
   // Global error handler (must be last)
   app.use(errorHandler);
