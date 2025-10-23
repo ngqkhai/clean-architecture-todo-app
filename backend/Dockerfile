@@ -1,48 +1,22 @@
-# Backend Dockerfile
-# Multi-stage build for optimized production image
+# Backend Dockerfile for Clean Architecture To-Do App
 
-# Stage 1: Build
-FROM node:20-alpine AS builder
-
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-COPY tsconfig.json ./
-
-# Install dependencies
-RUN npm ci
-
-# Copy source code
-COPY src ./src
-
-# Build TypeScript
-RUN npm run build
-
-# Stage 2: Production
 FROM node:20-alpine
 
+# Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install production dependencies only
+# Install dependencies
 RUN npm ci --only=production
 
-# Copy built files from builder
-COPY --from=builder /app/dist ./dist
-
-# Copy migration and seed scripts
-COPY src/infrastructure/database/postgres/migrations ./dist/infrastructure/database/postgres/migrations
-COPY src/infrastructure/database/seeds/seedData.json ./dist/infrastructure/database/seeds/seedData.json
+# Copy source code
+COPY . .
 
 # Expose port
-EXPOSE 3000
-
-# Set environment to production
-ENV NODE_ENV=production
+EXPOSE 5000
 
 # Start the application
-CMD ["node", "dist/index.js"]
+CMD ["npm", "start"]
 
