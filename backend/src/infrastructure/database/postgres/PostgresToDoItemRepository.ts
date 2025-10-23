@@ -44,7 +44,7 @@ export class PostgresToDoItemRepository implements IToDoItemRepository {
       ORDER BY created_at ASC
     `;
     const result = await pool.query(query, [listId]);
-    return result.rows.map(row => this.mapToEntity(row));
+    return result.rows.map((row: any) => this.mapToEntity(row));
   }
 
   async findById(id: string): Promise<ToDoItem | null> {

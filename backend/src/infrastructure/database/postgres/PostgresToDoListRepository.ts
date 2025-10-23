@@ -37,7 +37,7 @@ export class PostgresToDoListRepository implements IToDoListRepository {
       ORDER BY created_at DESC
     `;
     const result = await pool.query(query, [userId]);
-    return result.rows.map(row => this.mapToEntity(row));
+    return result.rows.map((row: any) => this.mapToEntity(row));
   }
 
   async findById(id: string): Promise<ToDoList | null> {
