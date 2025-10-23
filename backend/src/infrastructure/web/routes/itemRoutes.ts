@@ -25,17 +25,17 @@ router.get('/lists/:listId/items', (req, res, next) =>
 );
 
 // Update an item
-router.put('/:id', validateRequest(UpdateToDoItemSchema), (req, res, next) => 
+router.put('/items/:id', validateRequest(UpdateToDoItemSchema), (req, res, next) => 
   controller.update(req, res, next)
 );
 
 // Toggle item completion status
-router.patch('/:id/complete', (req, res, next) => 
+router.patch('/items/:id/complete', (req, res, next) => 
   controller.toggleComplete(req, res, next)
 );
 
 // Delete an item
-router.delete('/:id', (req, res, next) => 
+router.delete('/items/:id', (req, res, next) => 
   controller.delete(req, res, next)
 );
 
