@@ -258,8 +258,8 @@
   - [x] 6.6 Configure backend service to depend on postgres and mongo, pass DB_TYPE env variable
   - [x] 6.7 Configure frontend service to depend on backend, pass VITE_API_URL env variable
   - [x] 6.8 Add volume mounts for database initialization scripts (migrations)
-  - [ ] 6.9 Test `docker-compose up` with DB_TYPE=postgres
-  - [ ] 6.10 Test switching to DB_TYPE=mongo and verify application works
+  - [x] 6.9 Test `docker-compose up` with DB_TYPE=postgres
+  - [x] 6.10 Test switching to DB_TYPE=mongo and verify application works
 
 - [ ] 7.0 Documentation, Testing & Polish
   - [ ] 7.1 Write unit tests for domain entities (User, ToDoList, ToDoItem validation)
